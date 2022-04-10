@@ -6,9 +6,10 @@ from wtforms import StringField, SubmitField, SelectField
 from wtforms.fields.html5 import URLField, TimeField
 from wtforms.validators import DataRequired
 import csv
+import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 Bootstrap(app)
 
 CAFE_SYMBOL = "☕"
